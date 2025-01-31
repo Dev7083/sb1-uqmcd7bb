@@ -43,7 +43,8 @@
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
+    /* --card: 0 0% 3.9%; */
+    --card: 0, 0%, 19.61%;
     --card-foreground: 0 0% 98%;
     --popover: 0 0% 3.9%;
     --popover-foreground: 0 0% 98%;
@@ -77,6 +78,30 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  overflow-x: clip;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Scrollbar Design */
+body::-webkit-scrollbar {
+  width: 6px;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: light-dark(red, indigo); /* Light mode color */
+}
+
+/* body::-webkit-tap-highlight-color {
+  background-color: transparent;
+} */
+
 /* Image loading animation */
 @keyframes imageLoad {
   from {
@@ -89,7 +114,7 @@ html {
   }
 }
 
-img {
+.img {
   animation: imageLoad 0.3s ease-out;
 }
 

@@ -2,39 +2,50 @@
 
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
-import { ClipboardList, Users, Rocket } from "lucide-react";
+import { ClipboardList, Users, Rocket, University } from "lucide-react";
+import Container from "@/components/container";
+import { AnimatedIcon } from "../ui/animated-icon";
 
 const steps = [
   {
-    title: "Take Assessment",
+    title: "Choose Your University",
     description:
-      "Complete our comprehensive career assessment to understand your strengths and interests.",
+      "Select from a wide range of reputable Indian universities offering online degree courses.",
+    icon: University,
+  },
+  {
+    title: "Enroll in a Course",
+    description:
+      "Sign up for your desired undergraduate or postgraduate degree program.",
     icon: ClipboardList,
   },
   {
-    title: "Meet Your Mentor",
+    title: "Start Learning",
     description:
-      "Get matched with an expert career mentor who will guide you through your journey.",
-    icon: Users,
-  },
-  {
-    title: "Achieve Goals",
-    description:
-      "Follow your personalized roadmap and track your progress towards career success.",
+      "Access course materials, attend virtual classes, and complete assignments online.",
     icon: Rocket,
   },
 ];
 
 const HowItWorks = () => {
   return (
-    <section id="how-it-works" className="py-24 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+    <section
+      id='how-it-works'
+      className='pt-16 pb-2 bg-gray-50 dark:bg-background'
+    >
+      <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+        <div className='text-center mb-16'>
+          <div className='flex justify-center gap-8 mb-6'>
+            <AnimatedIcon
+              Icon={Rocket}
+              className='text-primary'
+            />
+          </div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl font-bold mb-4"
+            className='text-4xl font-bold mb-4'
           >
             How It Works
           </motion.h2>
@@ -43,13 +54,13 @@ const HowItWorks = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-gray-600"
+            className='text-xl text-muted-foreground'
           >
-            Your journey to career success in three simple steps
+            Your journey to earning a degree online in three simple steps
           </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className='grid md:grid-cols-3 gap-8'>
           {steps.map((step, index) => (
             <motion.div
               key={step.title}
@@ -58,13 +69,15 @@ const HowItWorks = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.2 }}
             >
-              <Card className="p-6 text-center h-full hover:shadow-lg transition-shadow">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-6">
-                  <step.icon className="h-8 w-8 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-                <p className="text-gray-600">{step.description}</p>
-              </Card>
+              <Container>
+                <Card className='p-6 text-center h-full hover:shadow-lg transition-shadow'>
+                  <div className='inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-6'>
+                    <step.icon className='h-8 w-8 text-primary' />
+                  </div>
+                  <h3 className='text-xl font-semibold mb-2'>{step.title}</h3>
+                  <p className='text-muted-foreground'>{step.description}</p>
+                </Card>
+              </Container>
             </motion.div>
           ))}
         </div>
