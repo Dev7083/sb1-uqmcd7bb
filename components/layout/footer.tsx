@@ -20,7 +20,7 @@ const footerData = [
       { href: "/about", label: "About Us" },
       { href: "/post", label: "Blog" },
 
-      { href: "/post", label: "Insights" },
+      { href: "/insights", label: "Insights" },
       { href: "/universities", label: "Universities" },
       { href: "/#contact", label: "Career Guidance" },
     ],

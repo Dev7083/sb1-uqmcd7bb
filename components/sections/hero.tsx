@@ -19,19 +19,44 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import { image1, image2, image3, image4, image5, image6 } from "@/lib/constant";
 
 const sliderData = [
   {
-    src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=533",
+    src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
     alt: "Career Guidance Slide Image-I",
   },
   {
-    src: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=533",
+    src: image1,
+    alt: "Career Guidance Slide Image-IV",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
     alt: "Career Guidance Slide Image-II",
   },
   {
-    src: "https://images.unsplash.com/photo-1591123120675-6f7f1aae0e5b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=533",
+    src: image2,
+    alt: "Career Guidance Slide Image-V",
+  },
+  {
+    src: image3,
+    alt: "Career Guidance Slide Image-VI",
+  },
+  {
+    src: image4,
+    alt: "Career Guidance Slide Image-VII",
+  },
+  {
+    src: image5,
+    alt: "Career Guidance Slide Image-VIII",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1591123120675-6f7f1aae0e5b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
     alt: "Career Guidance Slide Image-III",
+  },
+  {
+    src: image6,
+    alt: "Career Guidance Slide Image-IX",
   },
 ];
 
@@ -89,12 +114,10 @@ const Hero = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className='relative order-1 lg:order-2 max-sm:pt-4 overflow-hidden p-4 max-sm:p-2'
+              className='relative order-1 lg:order-2 max-sm:pt-4 overflow-hidden p-4 max-sm:p-0'
             >
               <Container>
-                <div className='relative'>
-                  <div className='absolute -inset-1 bg-gradient-to-r from-primary to-blue-600 rounded-lg blur opacity-30' />
-                  {/* <Image
+                {/* <Image
                     src='https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=533'
                     alt='Career Guidance'
                     width={800}
@@ -102,33 +125,33 @@ const Hero = () => {
                     className='relative rounded-lg shadow-2xl w-full md:w-[90%] mx-auto sm:mt-6'
                     priority={true} // Prioritize loading for critical images
                   /> */}
-                  <div className='relative container'>
-                    <Swiper
-                      modules={[Pagination, Autoplay]}
-                      spaceBetween={0}
-                      slidesPerView={1}
-                      pagination={{ clickable: true }}
-                      autoplay={{
-                        delay: 3000,
-                        disableOnInteraction: false,
-                      }}
-                      loop={true}
-                      className='w-full h-full rounded-lg'
-                    >
-                      {sliderData.map((slide, index) => (
-                        <SwiperSlide key={index}>
-                          <Image
-                            src={slide.src}
-                            alt={slide.alt}
-                            width={800}
-                            height={533}
-                            className='w-full h-full object-cover shadow-2xl'
-                            priority={true}
-                          />
-                        </SwiperSlide>
-                      ))}
-                    </Swiper>
-                  </div>
+                <div className='relative container p-0'>
+                  <div className='absolute -inset-1 bg-gradient-to-r from-primary to-blue-600 rounded-lg blur opacity-30' />
+                  <Swiper
+                    modules={[Pagination, Autoplay]}
+                    spaceBetween={0}
+                    slidesPerView={1}
+                    pagination={{ clickable: true }}
+                    autoplay={{
+                      delay: 3000,
+                      disableOnInteraction: false,
+                    }}
+                    loop={true}
+                    className='w-full h-full rounded-lg'
+                  >
+                    {sliderData.map((slide, index) => (
+                      <SwiperSlide key={index}>
+                        <Image
+                          src={slide.src}
+                          alt={slide.alt}
+                          width={800}
+                          height={533}
+                          className='w-full h-full object-cover shadow-2xl rounded-lg'
+                          priority={true}
+                        />
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
                 </div>
               </Container>
             </motion.div>
