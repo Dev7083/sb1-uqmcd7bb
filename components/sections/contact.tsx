@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+import { toast } from "sonner";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -9,7 +11,63 @@ import { Mail, MessageSquare, Phone } from "lucide-react";
 import Container from "@/components/container";
 import { AnimatedIcon } from "@/components/ui/animated-icon";
 
+interface ContactFormData {
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
+}
+
+const initialFormData: ContactFormData = {
+  name: "",
+  email: "",
+  phone: "",
+  message: "",
+};
+
 const Contact = () => {
+  const [formData, setFormData] = useState<ContactFormData>(initialFormData);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbygPleQhGEd8qY-DpL7F-_bmNFWyFDHrm-62PJdlNCwEZCsOjJNoeztUJ2BtWIivMgC/exec",
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            ...formData,
+            formType: "contact" // Add this to differentiate from apply form
+          })
+        }
+      );
+
+      toast.success("Message sent successfully!");
+      setFormData(initialFormData);
+      
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error("Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [id]: value
+    }));
+  };
+
   return (
     <section
       id='contact'
@@ -103,7 +161,7 @@ const Contact = () => {
           >
             <Container>
               <Card className='p-8'>
-                <form className='space-y-6'>
+                <form onSubmit={handleSubmit} className='space-y-6'>
                   <div>
                     <label
                       htmlFor='name'
@@ -113,7 +171,10 @@ const Contact = () => {
                     </label>
                     <Input
                       id='name'
+                      value={formData.name}
+                      onChange={handleChange}
                       placeholder='Your name'
+                      required
                     />
                   </div>
                   <div>
@@ -126,7 +187,30 @@ const Contact = () => {
                     <Input
                       id='email'
                       type='email'
+                      value={formData.email}
+                      onChange={handleChange}
                       placeholder='Your email'
+                      pattern='^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+                      title='Please enter a valid email address'
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor='phone'
+                      className='block text-sm font-medium text-foreground mb-2'
+                    >
+                      Phone
+                    </label>
+                    <Input
+                      id='phone'
+                      type='tel'
+                      value={formData.phone}
+                      onChange={handleChange}
+                      placeholder='Your phone'
+                      pattern='^\+?[1-9]\d{1,14}$'
+                      title='Please enter a valid phone number'
+                      required
                     />
                   </div>
                   <div>
@@ -138,11 +222,20 @@ const Contact = () => {
                     </label>
                     <Textarea
                       id='message'
+                      value={formData.message}
+                      onChange={handleChange}
                       placeholder='Your message'
                       rows={4}
+                      required
                     />
                   </div>
-                  <Button className='w-full text-white'>Send Message</Button>
+                  <Button 
+                    type="submit" 
+                    className='w-full text-white'
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                  </Button>
                 </form>
               </Card>
             </Container>

@@ -14,7 +14,7 @@ import {
   Phone,
   FileText,
 } from "lucide-react";
-import { universities } from "@/lib/data/universitiesalpha";
+import { universities } from "@/lib/data/universities";
 import { UniversityOverview } from "@/components/universities/university-overview";
 import { CoursesList } from "@/components/universities/courses-list";
 import { FacilitiesList } from "@/components/universities/facilities-list";
@@ -53,7 +53,7 @@ export default function UniversityPage({
   };
 
   return (
-    <main className='min-h-screen bg-background pt-24 pb-16'>
+    <main className='min-h-screen bg-background pb-16'>
       <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
         {/* Breadcrumb */}
         <nav className='flex items-center space-x-2 text-muted-foreground mb-8'>
@@ -73,8 +73,6 @@ export default function UniversityPage({
             src={university.heroImage}
             alt={university.name}
             fill
-            width={1080}
-            height={400}
             className='object-cover'
             priority
           />
@@ -124,11 +122,11 @@ export default function UniversityPage({
               <h2 className='text-xl font-bold mb-4'>Quick Actions</h2>
               <div className='space-y-4'>
                 <Link
-                  href='https://upsc.gov.in/'
+                  href={`/apply/${slug}`}
                   target='_blank'
                   rel='noopener noreferrer'
                 >
-                  <Button className='w-full gap-2'>
+                  <Button className='w-full gap-2 text-white'>
                     Apply Now
                     <FileText className='h-4 w-4' />
                   </Button>

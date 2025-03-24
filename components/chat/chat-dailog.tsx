@@ -150,7 +150,7 @@ export default function ChatDialog({ isOpen, onClose }: ChatDialogProps) {
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder='Type your message...'
-                    className='flex-grow min-w-0 px-3 py-2 focus:outline-none focus:ring-3 focus:ring-purple-600'
+                    className='flex-grow min-w-0 px-3 py-2 text-black focus:outline-none focus:ring-3 focus:ring-purple-600'
                   />
                   <div className='flex-shrink-0 flex'>
                     <button

@@ -1,6 +1,5 @@
 "use client";
 
-// import { motion } from "framer-motion";
 import { ExploreHeader } from "@/components/explore/explore-header";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
@@ -8,8 +7,7 @@ import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CoursesTab } from "@/components/explore/tabs/courses-tab";
 import { ExamsTab } from "@/components/explore/tabs/exams-tab";
-// import { StudyOnlineTab } from "@/components/explore/tabs/study-online-tab";
-import UniversitiesPage from "@/app/universities/page";
+import { UniversitiesPreview } from "@/components/universities/universities-preview";
 
 export default function ExplorePage() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -33,10 +31,7 @@ export default function ExplorePage() {
           </div>
         </div>
 
-        <Tabs
-          defaultValue='courses'
-          className='space-y-8'
-        >
+        <Tabs defaultValue='courses' className='space-y-8'>
           <TabsList className='w-full justify-center border-b rounded-lg p-0 h-auto'>
             <TabsTrigger
               value='courses'
@@ -57,13 +52,6 @@ export default function ExplorePage() {
             >
               Colleges
             </TabsTrigger>
-            {/* <TabsTrigger
-              value='study-online'
-              id='study-online'
-              className='rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent px-6 py-3'
-            >
-              Study Online
-            </TabsTrigger> */}
           </TabsList>
 
           <TabsContent value='courses'>
@@ -75,12 +63,8 @@ export default function ExplorePage() {
           </TabsContent>
 
           <TabsContent value='colleges'>
-            <UniversitiesPage />
+            <UniversitiesPreview limitCards={3} />
           </TabsContent>
-
-          {/* <TabsContent value='study-online'>
-            <StudyOnlineTab />
-          </TabsContent> */}
         </Tabs>
       </div>
     </main>

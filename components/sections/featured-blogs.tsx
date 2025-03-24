@@ -102,8 +102,7 @@ const FeaturedBlogs = () => {
                     <Link href={`/insights/${blog.slug}`}>
                       <Button
                         variant='ghost'
-                        className='group hover:text-white cursor-not-allowed'
-                        // disabled
+                        className='group hover:text-white cursor-pointer'
                       >
                         Read More
                         <ArrowRight className='ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform' />

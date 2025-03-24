@@ -7,3 +7,7 @@ export default function RootLayout({
     <main className='min-h-screen bg-background pb-16 pt-24'>{children}</main>
   );
 }
+export const metadata = {
+  title: 'CollegeHike | Universities - Browse amongst Best Universities',
+  description: 'Apply for University programs. Get details of collegs offering globally recognized degrees.',
+};

@@ -22,8 +22,8 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { universityData } from "@/lib/university/university-data";
-import { universities } from "@/lib/data/universitiesalpha";
+import { universityData } from "@/lib/course/course-data";
+import { universities } from "@/lib/data/universities";
 import { useState } from "react";
 
 export default function CoursePage() {

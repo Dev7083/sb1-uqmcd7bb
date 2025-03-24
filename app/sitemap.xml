@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+<!-- Main Pages -->
+<url>
+  <loc>https://collegehike.com/</loc>
+  <lastmod>2025-03-22</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>1.0</priority>
+</url>
+
+<url>
+  <loc>https://www.collegehike.com/</loc>
+  <lastmod>2025-03-22</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>1.0</priority>
+</url>
+
+<url>
+  <loc>https://collegehike.com/apply</loc>
+  <lastmod>2025-03-22</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+
+<url>
+  <loc>https://collegehike.com/universities</loc>
+  <lastmod>2025-03-22</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+
+<url>
+  <loc>https://www.collegehike.com/explore</loc>
+  <priority>0.80</priority>
+</url>
+
+<url>
+  <loc>https://www.collegehike.com/insights</loc>
+  <priority>0.80</priority>
+</url>
+
+<url>
+  <loc>https://www.collegehike.com/about-us</loc>
+  <priority>0.80</priority>
+</url>
+
+<!-- University Pages -->
+<url>
+  <loc>https://www.collegehike.com/universities/amity-university</loc>
+  <priority>0.75</priority>
+</url>
+
+<url>
+  <loc>https://www.collegehike.com/universities/manipal-university</loc>
+  <priority>0.75</priority>
+</url>
+
+<url>
+  <loc>https://www.collegehike.com/universities/lovely-professional-university</loc>
+  <priority>0.75</priority>
+</url>
+
+<url>
+  <loc>https://www.collegehike.com/universities/amity-online</loc>
+  <priority>0.75</priority>
+</url>
+
+<url>
+  <loc>https://www.collegehike.com/universities/jain-online</loc>
+  <priority>0.75</priority>
+</url>
+
+<url>
+  <loc>https://www.collegehike.com/universities/manipal-online</loc>
+  <priority>0.75</priority>
+</url>
+
+<url>
+  <loc>https://www.collegehike.com/explore?tab=online</loc>
+  <priority>0.75</priority>
+</url>
+
+<!-- Dynamic Content Pages -->
+<url>
+  <loc>https://collegehike.com/insights</loc>
+  <lastmod>2025-03-22</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority>
+</url>
+
+<!-- Insights (Blog) Pages -->
+<url>
+  <loc>https://www.collegehike.com/insights/remote-work-skills</loc>
+  <priority>0.70</priority>
+</url>
+
+<url>
+  <loc>https://www.collegehike.com/insights/ai-career-development</loc>
+  <priority>0.70</priority>
+</url>
+
+<url>
+  <loc>https://www.collegehike.com/insights/linkedin-personal-brand</loc>
+  <priority>0.70</priority>
+</url>
+
+<!-- Posts & Application Pages -->
+<url>
+  <loc>https://www.collegehike.com/post</loc>
+  <priority>0.70</priority>
+</url>
+
+<url>
+  <loc>https://www.collegehike.com/apply/amity-university</loc>
+  <priority>0.64</priority>
+</url>
+
+<url>
+  <loc>https://www.collegehike.com/post/united-university</loc>
+  <priority>0.64</priority>
+</url>
+
+</urlset>

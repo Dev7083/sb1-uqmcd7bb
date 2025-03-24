@@ -14,7 +14,7 @@ const navItems = [
   { name: "Colleges", href: "/universities" },
   { name: "Explore", href: "/explore" },
   { name: "Blogs", href: "/insights" },
-  { name: "About", href: "/about" },
+  { name: "About", href: "/about-us" },
 ];
 
 const Navbar = () => {

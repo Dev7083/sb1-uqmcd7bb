@@ -39,29 +39,66 @@ export default async function Post({
   if (!post) return <div>Post not found</div>;
 
   return (
-    <section className='relative sm:min-h-screen lg:min-h-screen flex items-center p-16 max-sm:pb-22 px-32 overflow-hidden bg-gradient-to-b from-background via-background/95 to-background/90'>
-      <Link href='/post'>
-        <Button className='w-12 h-12 rounded-full bg-primary hover:bg-foreground text-background shadow-lg'>
-          <ArrowLeft className='w-6 h-6 hover:scale-150 ' />
-        </Button>
-      </Link>
-      <div className='container mx-auto px-4 py-8'>
-        <h1 className='text-4xl font-bold mb-4'>{post.title}</h1>
-        <p className='text-gray-600 mb-4'>
-          {new Date(post.publishedAt).toLocaleDateString()}
-        </p>
-        {post.mainImage && (
-          <Image
-            src={urlFor(post.mainImage).width(800).url()}
-            alt={post.title}
-            width={800}
-            height={256}
-            className='w-full h-64 object-cover rounded-lg mb-8'
-          />
-        )}
-        <div className='prose max-w-none'>
-          <PortableText value={post.body} />
+    <section className='relative min-h-screen flex flex-col px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 bg-gradient-to-b from-background via-background/95 to-background/90'>
+      <div className='container mx-auto max-w-4xl'>
+        {/* Back Button and Header */}
+        <div className='mb-2 mt-4 pt-6 max-sm:pt-8 space-y-6'>
+          <Link href='/post'>
+            <Button 
+              variant="ghost" 
+              className='group flex items-center text-muted-foreground hover:text-white transition-colors duration-200'
+            >
+              <ArrowLeft className='w-4 h-4 mr-2 transition-transform duration-200 group-hover:-translate-x-1' />
+              Back to Posts
+            </Button>
+          </Link>
+
+          <header className='mt-0'>
+            <h1 className='text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 leading-tight'>
+              {post.title}
+            </h1>
+            <time 
+              dateTime={post.publishedAt}
+              className='text-sm sm:text-base text-muted-foreground'
+            >
+              {new Date(post.publishedAt).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+              })}
+            </time>
+          </header>
         </div>
+
+        {/* Featured Image */}
+        {post.mainImage && (
+          <div className='relative w-full aspect-video mb-8 rounded-lg overflow-hidden shadow-lg'>
+            <Image
+              src={urlFor(post.mainImage).width(1200).url()}
+              alt={post.title}
+              fill
+              className='object-cover'
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+              priority
+            />
+          </div>
+        )}
+
+        {/* Article Content */}
+        <article className='prose prose-sm sm:prose lg:prose-lg max-w-none 
+          prose-headings:font-bold 
+          prose-h1:text-2xl sm:prose-h1:text-3xl
+          prose-h2:text-xl sm:prose-h2:text-2xl
+          prose-p:text-base sm:prose-p:text-lg
+          prose-p:leading-relaxed
+          prose-a:text-primary hover:prose-a:text-primary/80
+          prose-img:rounded-lg
+          prose-pre:bg-muted
+          prose-code:text-primary
+          prose-blockquote:border-l-primary
+          prose-strong:text-foreground'>
+          <PortableText value={post.body} />
+        </article>
       </div>
     </section>
   );

@@ -18,9 +18,9 @@ export default function Home() {
       <Hero />
       {/* <Courses /> */}
       <ExplorePage />
+      <DiscoverColleges />
       <HowItWorks />
       <PartnerUniversity />
-      <DiscoverColleges />
       <StudyOnline />
       <Features />
       <FeaturedBlogs />

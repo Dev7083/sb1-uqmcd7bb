@@ -7,7 +7,7 @@ import { CarouselButton } from "@/components/carousel/carousel-button";
 import { FloatingShapes } from "@/components/carousel/floating-shapes";
 import { GraduationCap, BookOpen, Laptop } from "lucide-react";
 import { AnimatedIcon } from "@/components/ui/animated-icon";
-import { universities } from "@/lib/data/universities";
+import { universities } from "@/lib/data/top-colleges-data";
 
 export default function UniversityCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);

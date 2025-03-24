@@ -5,7 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Clock, MapPin, GraduationCap, ArrowRight } from "lucide-react";
 import { useRouter } from "next/navigation";
-import type { Course } from "@/lib/university/university";
+import type { Course } from "@/lib/course/course";
 import Image from "next/image";
 
 interface CourseCardProps {

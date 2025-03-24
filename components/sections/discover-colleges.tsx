@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { universities } from "@/lib/data/universitiesalpha";
+import { universities } from "@/lib/data/universities";
 import { AnimatedIcon } from "@/components/ui/animated-icon";
 
 export default function DiscoverColleges() {
@@ -90,38 +90,58 @@ export default function DiscoverColleges() {
 
         <div className='grid lg:grid-cols-12 gap-8'>
           {/* City List */}
-          <Card className='lg:col-span-3 p-4 h-auto overflow-y-auto'>
+            <Card className='lg:col-span-3 p-4 h-auto overflow-y-auto'>
             <div className='space-y-2'>
+              <motion.button
+              onClick={() => setSelectedCity("")}
+              className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
+                selectedCity === ""
+                ? "bg-primary text-white"
+                : "hover:bg-muted"
+              }`}
+              whileHover={{ x: 4 }}
+              >
+              <div className='flex items-center justify-between'>
+                <div className='flex items-center gap-2'>
+                <MapPin className='h-4 w-4' />
+                <span>All Cities</span>
+                </div>
+                <span className='text-sm'>
+                {universities.length} college{universities.length !== 1 ? "s" : ""}
+                </span>
+              </div>
+              </motion.button>
+
               {filteredCities.map(({ city, count }) => (
-                <motion.button
-                  key={city}
-                  onClick={() => setSelectedCity(city)}
-                  className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
-                    selectedCity === city
-                      ? "bg-primary text-white"
-                      : "hover:bg-muted"
-                  }`}
-                  whileHover={{ x: 4 }}
-                >
-                  <div className='flex items-center justify-between'>
-                    <div className='flex items-center gap-2'>
-                      <MapPin className='h-4 w-4' />
-                      <span>{city}</span>
-                    </div>
-                    <span className='text-sm'>
-                      {count} college{count !== 1 ? "s" : ""}
-                    </span>
-                  </div>
-                </motion.button>
+              <motion.button
+                key={city}
+                onClick={() => setSelectedCity(city)}
+                className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
+                selectedCity === city
+                  ? "bg-primary text-white"
+                  : "hover:bg-muted"
+                }`}
+                whileHover={{ x: 4 }}
+              >
+                <div className='flex items-center justify-between'>
+                <div className='flex items-center gap-2'>
+                  <MapPin className='h-4 w-4' />
+                  <span>{city}</span>
+                </div>
+                <span className='text-sm'>
+                  {count} college{count !== 1 ? "s" : ""}
+                </span>
+                </div>
+              </motion.button>
               ))}
 
               {filteredCities.length === 0 && (
-                <div className='text-center py-8 text-muted-foreground'>
-                  No cities found matching your search
-                </div>
+              <div className='text-center py-8 text-muted-foreground'>
+                No cities found matching your search
+              </div>
               )}
             </div>
-          </Card>
+            </Card>
 
           {/* College Grid */}
           <div className='lg:col-span-9'>
@@ -134,7 +154,7 @@ export default function DiscoverColleges() {
                   exit={{ opacity: 0 }}
                   className='grid md:grid-cols-2 lg:grid-cols-3 gap-6'
                 >
-                  {collegesInCity.map((college, index) => (
+                  {collegesInCity.slice(0,3).map((college, index) => (
                     <motion.div
                       key={college.id}
                       initial={{ opacity: 0, y: 20 }}

@@ -63,7 +63,7 @@ export function UniversityCard({ university }: UniversityCardProps) {
           </p>
 
           <Link href={`/universities/${university.slug}`}>
-            <Button className='w-full group'>
+            <Button className='w-full group text-white'>
               View Details
               <ArrowRight className='ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform' />
             </Button>

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
-import { Clock, DollarSign, GraduationCap, Briefcase } from "lucide-react";
+import { Clock, IndianRupee , GraduationCap, Briefcase } from "lucide-react";
 import type { Course } from "@/lib/types/universities";
 
 interface CoursesListProps {
@@ -31,7 +31,7 @@ export function CoursesList({ courses }: CoursesListProps) {
                       <span className='text-sm'>{course.duration}</span>
                     </div>
                     <div className='flex items-center gap-2'>
-                      <DollarSign className='h-4 w-4 text-primary' />
+                      <IndianRupee  className='h-4 w-4 text-primary' />
                       <span className='text-sm'>{course.tuitionFees}</span>
                     </div>
                   </div>

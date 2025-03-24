@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Trophy } from "lucide-react";
-import type { University } from "@/lib/types/university";
+import type { University } from "@/lib/types/top-colleges-data";
 import Image from "next/image";
 
 interface UniversityCardProps {

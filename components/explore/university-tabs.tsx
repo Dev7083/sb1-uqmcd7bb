@@ -3,7 +3,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CourseGrid } from "./course-grid";
 import { BookOpen, Briefcase, Code, Calculator } from "lucide-react";
-import { universityData } from "@/lib/university/university-data";
+import { universityData } from "@/lib/course/course-data";
 
 interface UniversityTabsProps {
   searchQuery: string;

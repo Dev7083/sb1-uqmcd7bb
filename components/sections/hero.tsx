@@ -61,11 +61,11 @@ const sliderData = [
 ];
 
 const socialIcons = [
-  { icon: Linkedin },
-  { icon: Twitter },
-  { icon: Instagram },
-  { icon: Facebook },
-  { icon: Youtube },
+  { icon: Linkedin, url: "https://www.linkedin.com" },
+  { icon: Twitter, url: "https://www.twitter.com" },
+  { icon: Instagram, url: "https://www.instagram.com/collegehike" },
+  { icon: Facebook, url: "https://www.facebook.com/collegehike" },
+  { icon: Youtube, url: "https://www.youtube.com/@collegehike" },
 ];
 const Hero = () => {
   return (
@@ -199,15 +199,16 @@ const Hero = () => {
                 {/* Social Icons */}
                 <div className='flex  justify-center gap-8 pt-6 max-sm:hidden lg:justify-start '>
                   {socialIcons.map((social, index) => (
-                    <div
-                      className='inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 hover:bg-primary/30 px-8'
+                    <Link
+                      href={social.url}
                       key={index}
+                      className='inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 hover:bg-primary/30 px-8'
                     >
                       <AnimatedIcon
                         Icon={social.icon}
                         className='text-primary h-6 w-6'
                       />
-                    </div>
+                    </Link>
                   ))}
                 </div>
               </Container>

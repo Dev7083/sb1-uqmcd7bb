@@ -10,14 +10,14 @@ const footerData = [
       { href: "/apply", label: "Apply" },
       { href: "/explore", label: "Online Courses" },
       { href: "/explore#exams", label: "Exams" },
-      { href: "/explore#study-online", label: "Study Online" },
+      { href: "/#study-online", label: "Study Online" },
       { href: "/universities", label: "Explore Colleges" },
     ],
   },
   {
     title: "Company",
     links: [
-      { href: "/about", label: "About Us" },
+      { href: "/about-us", label: "About Us" },
       { href: "/post", label: "Blog" },
 
       { href: "/insights", label: "Insights" },

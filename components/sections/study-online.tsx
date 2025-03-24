@@ -57,7 +57,7 @@ const onlineUniversities = [
 
 export default function StudyOnline() {
   return (
-    <section className='pt-16 bg-background overflow-hidden'>
+    <section className='pt-16 bg-background overflow-hidden' id='study-online'>
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='grid  lg:grid-cols-2 gap-12 items-center'>
           {/* 3D Illustration Side */}
@@ -68,7 +68,7 @@ export default function StudyOnline() {
             className='relative overflow-hidden'
             whileHover={{ scale: 1.01 }}
           >
-            <div className='relative items-center aspect-square max-md:max-h-72 mx-auto'>
+            <div className='relative items-center aspect-video md:aspect-3/2 max-md:max-h-72 mx-auto'>
               <div className='absolute inset-0 bg-gradient-to-r from-primary/20 to-blue-600/20 rounded-xl blur-2xl shadow-lg' />
               <Swiper
                 modules={[Pagination, Autoplay]}
@@ -125,10 +125,10 @@ export default function StudyOnline() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <Card className='p-6 h-full hover:shadow-lg transition-all duration-300'>
+                  <Card className='p-2 pb-4 h-full hover:shadow-lg transition-all duration-300'>
                     <div className='flex flex-col h-full'>
-                      <div className='flex items-center gap-4 mb-4'>
-                        <div className='relative w-12 h-12 rounded-full overflow-hidden'>
+                      <div className='flex flex-col items-center text-center gap-4 mb-4'>
+                        <div className='relative w-20 h-20 rounded-full overflow-hidden'>
                           <Image
                             src={university.logo}
                             alt={university.name}
@@ -141,9 +141,9 @@ export default function StudyOnline() {
                           <h3 className='font-semibold'>{university.name}</h3>
                         </div>
                       </div>
-                      <p className='text-muted-foreground text-sm mb-4 flex-grow'>
+                      {/* <p className='text-muted-foreground text-sm mb-4 flex-grow text-center'>
                         {university.description}
-                      </p>
+                      </p> */}
                       <Link href={university.link}>
                         <Button
                           variant='outline'

@@ -81,7 +81,7 @@ export function ContactInfo({ contact }: ContactInfoProps) {
                   variant='outline'
                   size='icon'
                   asChild
-                  className='hover:text-primary'
+                  className='hover:text-primary hover:text-white'
                 >
                   <a
                     href={item.href}
